@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  prod_num: MyString
+  vendor_id: 1
+  date_received: 2011-11-01
+  purchase_id: 1
+
+two:
+  prod_num: MyString
+  vendor_id: 1
+  date_received: 2011-11-01
+  purchase_id: 1

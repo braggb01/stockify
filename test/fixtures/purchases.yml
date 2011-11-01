@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  po_number: MyString
+  date_ordered: 2011-11-01
+  complete: false
+
+two:
+  po_number: MyString
+  date_ordered: 2011-11-01
+  complete: false

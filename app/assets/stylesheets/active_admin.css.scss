@@ -1,0 +1,85 @@
+// Active Admin CSS Styles
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// To customize the Active Admin interfaces, add your
+// styles here:
+
+#header h1 {
+	color: #DFDFDF;
+	display: inline-block;
+	font-size: 4em;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-right: 20px;
+	font-family: Ubuntu, "Courier New", Arial;
+  text-shadow: 2px 2px 2px #000000;
+	filter: dropshadow(color=#000000, offx=2, offy=2); 
+}
+#header #utility_nav {
+    color: #AAAAAA;
+    position: absolute;
+    right: 25px;
+    top: 30px;
+    font-size: 1.5em;
+  	text-shadow: 2px 2px 2px #000000;
+		filter: dropshadow(color=#000000, offx=2, offy=2); 
+}
+#header ul#tabs {
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+    margin-top: 0;
+}
+#header ul#tabs > li {
+    display: inline-block;
+    font-size: 1.4em;
+    margin-right: 10px;
+    position: relative;
+}
+#header ul#tabs > li.has_nested > a {
+    background: url("/assets/active_admin/nested_menu_arrow.gif") no-repeat scroll 89% 50% transparent;
+    padding-right: 30px;
+    z-index: 1050;
+}
+#header ul#tabs > li.has_nested.current > a {
+    background: url("/assets/active_admin/nested_menu_arrow_dark.gif") no-repeat scroll 89% 50% #7B8389;
+    padding-right: 30px;
+}
+#title_bar h2 {
+    font-size: 2.6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+table.dashboard .dashboard_section {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 1px 4px #DDDDDD inset;
+    margin-bottom: 20px;
+}
+table.dashboard .dashboard_section h3 {
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #EDEDED;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    color: #5E6469;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 140%;
+    margin-bottom: 0.5em;
+    padding: 5px 10px 3px;
+    text-shadow: 0 1px 0 white;
+}
+table.index_table th {
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #EDEDED;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    color: #5E6469;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 140%;
+    margin-bottom: 0.5em;
+    padding: 5px 12px 3px;
+    text-align: left;
+    text-shadow: 0 1px 0 white;
+}
