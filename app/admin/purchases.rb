@@ -17,8 +17,9 @@ ActiveAdmin.register Purchase, :as => "Purchase Order" do
 		attributes_table :po_number, :date_ordered, :complete, :admin_user
 		panel "Products" do
 			table_for purchase_order.products, :sortable => :date_received do |p|
-				p.column("Product #") { |product| link_to product.prod_num, admin_product_path(product) }
-				p.column("Manufacturer") { |product| product.vendor.brand }
+				#p.column("Product #") { |product| link_to product.prod_num, admin_product_path(product) }
+				p.column("Product #") { |product| link_to product.product_type.prod_number, admin_product_path(product) }
+				p.column("Manufacturer") { |product| product.product_type.brand }
 				p.column("Quantity Received") { |product| product.quantity.to_s }
 				p.column("Location Stored") { |product| product.location.room unless product.location.blank? }
 				p.column("Date Received") { |product| status_tag (product.received ? product.date_received.to_s(:long) : "Has Not Arrived"), (product.received ? :ok : :error) }
