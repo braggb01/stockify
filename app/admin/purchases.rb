@@ -33,7 +33,7 @@ ActiveAdmin.register Purchase, :as => "Purchase Order" do
 			f.input :admin_user, :label => "Ordered By:"
 			f.input :po_number, :label => "PO Number:"
 			f.input :date_ordered, :label => "Date Ordered:", :as => :datepicker
-			f.input :complete
+			f.input :complete, :label => "All Parts Received?"
 		end
 		f.buttons
 	end
