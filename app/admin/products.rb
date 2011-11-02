@@ -5,10 +5,14 @@ ActiveAdmin.register Product do
     column "Product #", :sortable => :prod_num do |product|
 			link_to product.prod_num, admin_product_path(product)
 		end
+		#column("Purchase Order") { |product| product.purchase.po_number }
+		column "Purchase Order", :sortable => :purchase_id do |product|
+			link_to product.purchase.po_number, admin_purchase_order_path(product.purchase_id)
+		end
 		column "Status", :sortable => :received do |product|
 			 status_tag (product.received ? "Received" : "Pending"), (product.received ? :ok : :error)
 		end
-		column "Quantity Received", :quantity, :sortable => false
+		column "Quantity Ordered", :quantity, :sortable => false
 		column("Location Stored") { |product| product.location.room unless product.location.blank? }
     column :date_received
     column "Received By", :admin_user, :sortable => false
@@ -36,7 +40,8 @@ ActiveAdmin.register Product do
 	filter :prod_num, :label => "PRODUCT #:"
 	filter :date_received
 	
-	scope :Pending, :default => true do |products|
+  scope :all, :default => true
+	scope :Pending do |products|
 		products.where('received == ?', false)
 	end
 	scope :Received do |products|
