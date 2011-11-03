@@ -9,25 +9,19 @@ class Product < ActiveRecord::Base
 
 	after_save :add_products_to_inventory
 
-	#def add_products_to_inventory
-  	#if complete?
-      #self.products.each do |product|
-        #Inventory.find_by_product_type_id(product.product_type_id).update_attribute(:quantity, product.quantity)
-      #end
-    #end
-  #end
 
 	#def add_products_to_inventory
-  	#if received? 
-      	#Inventory.find_by_product_type_id(product_type_id).update_attribute(:quantity, quantity)
-    #end
-  #end
+		#i = Inventory.find_by_product_type_id(product_type_id)
+		#if received?
+			#i.quantity += quantity
+			#i.save
+		#end
+	#end
 
 	def add_products_to_inventory
-		i = Inventory.find_by_product_type_id(product_type_id)
+		i = ProductType.find_by_id(product_type_id)
 		if received?
-			#i.update_attribute(:quantity, i.quantity + quantity)
-			i.quantity += quantity
+			i.total_quantity += quantity
 			i.save
 		end
 	end
