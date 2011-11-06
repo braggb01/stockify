@@ -1,3 +1,3 @@
 ActiveAdmin.register Location do
-  menu :parent => "Administration", :priority => 2
+  menu :parent => "Administration", :label => "Storage Locations"
 end

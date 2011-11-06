@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-	menu :parent => "Purchase Orders", :priority => 2
+	menu :parent => "Purchase Orders"
 
   index do
     column "Product #", :sortable => :product_type_id do |product|
