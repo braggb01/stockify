@@ -17,6 +17,9 @@ Stockify::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
+	#THIS WAS MADE BY ME
+	config.assets.precompile += %w[active_admin.css active_admin.js]
+
   # Generate digests for assets URLs
   config.assets.digest = true
 

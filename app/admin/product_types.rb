@@ -7,7 +7,14 @@ ActiveAdmin.register ProductType do
 		end
 		column "Description", :prod_desc, :sortable => false
     column :brand
-    column :total_quantity
+    #column :total_quantity
+	  column "Actual Stock", :sortable => :total_quantity do |product_type|
+			if product_type.total_quantity < product_type.needed_quantity
+				status_tag product_type.total_quantity.to_s, :error
+			else
+				product_type.total_quantity.to_s
+			end
+		end
     column :needed_quantity
     default_actions
   end

@@ -1,0 +1,13 @@
+<%= semantic_form_for [:admin, @product] do |f| %>
+	<%= f.inputs "New Product" do %>
+		<%= f.input :purchase, :label => "Purchase Order:", :collection => Purchase.all, :label_method => :po_number %>
+		#f.input :prod_num, :label => "Product #:"
+		<%= f.autocomplete_field :product_type_prod_number, autocomplete_product_type_prod_number_admin_products_path %>
+		<%= f.input :quantity, :label => "Quantity:" %>
+		<%= f.input :location, :label => "Location Stored:",  :collection => Location.all, :label_method => :room %>
+		<%= f.input :admin_user, :label => "Received By:" %>
+		<%= f.input :received %>
+		<%= f.input :date_received, :label => "Date Received:", :as => :datepicker %>
+	<% end %>
+	<%= f.buttons :commit %>
+<% end %>

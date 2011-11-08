@@ -71,9 +71,9 @@ ActiveAdmin.register Product do
 	
   scope :all, :default => true
 	scope :Pending do |products|
-		products.where('received == ?', false)
+		products.where('received = ?', false)
 	end
 	scope :Received do |products|
-		products.where('received == ?', true)
+		products.where('received = ?', true)
 	end
 end

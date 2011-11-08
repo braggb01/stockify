@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111105182616) do
+ActiveRecord::Schema.define(:version => 20111107225232) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20111105182616) do
     t.integer  "needed_quantity", :default => 0
   end
 
+  add_index "product_types", ["prod_number", "total_quantity", "needed_quantity"], :name => "index_product_types_on_prod_number"
+
   create_table "products", :force => true do |t|
     t.integer  "vendor_id"
     t.date     "date_received"
@@ -75,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20111105182616) do
     t.integer  "admin_user_id"
     t.integer  "product_type_id"
   end
+
+  add_index "products", ["product_type_id", "admin_user_id"], :name => "index_products_on_product_type_id"
 
   create_table "purchases", :force => true do |t|
     t.string   "po_number"
